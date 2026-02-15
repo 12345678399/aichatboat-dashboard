@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="default">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - NebulaX Admin</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar (Reused) -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-logo">N</div>
+                <div class="brand-name">NebulaX</div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-group-label">Dashboards</div>
+                <a href="index.html" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    <span>Analytics</span>
+                </a>
+                <a href="ecommerce-products.html" class="nav-link active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                        <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                    </svg>
+                    <span>eCommerce</span>
+                </a>
+
+                <div class="nav-group-label">Apps</div>
+                <a href="app-chat.html" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Chat</span>
+                </a>
+
+                <div class="nav-group-label">System</div>
+                <a href="user-profile.html" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>User Profile</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header (Reused) -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="toggle-sidebar-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                    <!-- Search ... -->
+                </div>
+                <div class="header-right">
+                    <!-- Profile ... -->
+                    <img src="https://ui-avatars.com/api/?name=Admin+User&background=random" alt="Avatar"
+                        class="avatar">
+                </div>
+            </header>
+
+            <div class="content-body">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Products</h1>
+                        <nav class="breadcrumb">
+                            <span>eCommerce</span> / <span style="color: var(--text-main);">Product List</span>
+                        </nav>
+                    </div>
+                    <button class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        Add Product
+                    </button>
+                </div>
+
+                <!-- Filters -->
+                <div class="card" style="margin-bottom: var(--space-6);">
+                    <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+                        <input type="text" class="form-input" placeholder="Search products..." style="width: 300px;">
+
+                        <select class="form-input" style="width: 150px;">
+                            <option>Category</option>
+                            <option>Electronics</option>
+                            <option>Clothing</option>
+                            <option>Home</option>
+                        </select>
+
+                        <select class="form-input" style="width: 150px;">
+                            <option>Status</option>
+                            <option>Active</option>
+                            <option>Draft</option>
+                            <option>Out of Stock</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Products Table -->
+                <div class="card">
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 40px;"><input type="checkbox"></th>
+                                    <th>Product</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div
+                                                style="width: 40px; height: 40px; border-radius: 8px; background: #e2e8f0; display: grid; place-items: center;">
+                                                IMG</div>
+                                            <div>
+                                                <div style="font-weight: 600;">Nebula Wireless Headphones</div>
+                                                <div style="font-size: 0.75rem; color: var(--text-muted);">ID: #SKU-892
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Electronics</td>
+                                    <td style="font-weight: 600;">$299.00</td>
+                                    <td>45</td>
+                                    <td><span class="badge badge-success">Active</span></td>
+                                    <td>
+                                        <div style="display: flex; gap: 8px;">
+                                            <button class="btn btn-icon" style="width: 28px; height: 28px;"><svg
+                                                    width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path
+                                                        d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7">
+                                                    </path>
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z">
+                                                    </path>
+                                                </svg></button>
+                                            <button class="btn btn-icon"
+                                                style="width: 28px; height: 28px; color: var(--danger);"><svg width="16"
+                                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                                    <path
+                                                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                                    </path>
+                                                </svg></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div
+                                                style="width: 40px; height: 40px; border-radius: 8px; background: #e2e8f0; display: grid; place-items: center;">
+                                                IMG</div>
+                                            <div>
+                                                <div style="font-weight: 600;">Ergo Gaming Chair</div>
+                                                <div style="font-size: 0.75rem; color: var(--text-muted);">ID: #SKU-221
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Furniture</td>
+                                    <td style="font-weight: 600;">$149.00</td>
+                                    <td>0</td>
+                                    <td><span class="badge badge-danger">Out of Stock</span></td>
+                                    <td>
+                                        <div style="display: flex; gap: 8px;">
+                                            <button class="btn btn-icon" style="width: 28px; height: 28px;"><svg
+                                                    width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path
+                                                        d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7">
+                                                    </path>
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z">
+                                                    </path>
+                                                </svg></button>
+                                            <button class="btn btn-icon"
+                                                style="width: 28px; height: 28px; color: var(--danger);"><svg width="16"
+                                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                                    <path
+                                                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                                    </path>
+                                                </svg></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Pagination -->
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; padding-top: var(--space-4); border-top: 1px solid var(--border-color); margin-top: var(--space-4);">
+                        <div style="color: var(--text-secondary); font-size: 0.875rem;">Showing 1-10 of 45</div>
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn btn-secondary" style="padding: 4px 12px;">Prev</button>
+                            <button class="btn btn-primary" style="padding: 4px 12px;">1</button>
+                            <button class="btn btn-secondary" style="padding: 4px 12px;">2</button>
+                            <button class="btn btn-secondary" style="padding: 4px 12px;">Next</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

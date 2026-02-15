@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="default">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - NebulaX Admin</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <style>
+        .profile-header {
+            position: relative;
+            margin-bottom: 80px;
+        }
+
+        .cover-image {
+            height: 200px;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: var(--radius-lg);
+            object-fit: cover;
+        }
+
+        .profile-avatar-large {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid var(--bg-body);
+            position: absolute;
+            bottom: -60px;
+            left: 40px;
+            z-index: 10;
+        }
+
+        .profile-actions {
+            position: absolute;
+            bottom: -50px;
+            right: 0;
+            display: flex;
+            gap: 10px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 16px;
+            padding-bottom: 24px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 2px solid var(--bg-surface);
+        }
+
+        .timeline-item:last-child {
+            border-left: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-logo">N</div>
+                <div class="brand-name">NebulaX</div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-group-label">Dashboards</div>
+                <a href="index.html" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    <span>Analytics</span>
+                </a>
+                <a href="ecommerce-products.html" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                        <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                    </svg>
+                    <span>eCommerce</span>
+                </a>
+
+                <div class="nav-group-label">Apps</div>
+                <a href="app-chat.html" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Chat</span>
+                </a>
+
+                <div class="nav-group-label">System</div>
+                <a href="user-profile.html" class="nav-link active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>User Profile</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <!-- (Same header as index) -->
+                <div class="header-left">
+                    <button class="toggle-sidebar-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg></button>
+                </div>
+                <div class="header-right">
+                    <img src="https://ui-avatars.com/api/?name=Admin+User&background=random" alt="Avatar"
+                        class="avatar">
+                </div>
+            </header>
+
+            <div class="content-body">
+
+                <!-- Profile Header -->
+                <div class="profile-header">
+                    <div class="cover-image"></div>
+                    <img src="https://ui-avatars.com/api/?name=Alex+Morgan&background=random"
+                        class="profile-avatar-large" alt="Profile">
+
+                    <div class="profile-actions">
+                        <button class="btn btn-secondary">Message</button>
+                        <button class="btn btn-primary">Edit Profile</button>
+                    </div>
+                </div>
+
+                <div style="margin-left: 170px; margin-bottom: 40px;">
+                    <h1 style="font-size: 1.5rem; margin-bottom: 4px;">Alex Morgan</h1>
+                    <div style="color: var(--text-secondary); display: flex; gap: 16px; font-size: 0.875rem;">
+                        <span>Product Designer</span>
+                        <span>San Francisco, CA</span>
+                        <span>Joined March 2024</span>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: var(--space-6);">
+
+                    <!-- Left Column: Info -->
+                    <div style="display: flex; flex-direction: column; gap: var(--space-6);">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">About</div>
+                            </div>
+                            <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.9rem;">
+                                Senior Product Designer with 5+ years of experience in building SaaS applications.
+                                Passionate about user experience and accessible design.
+                            </p>
+                            <div style="margin-top: 20px;">
+                                <div class="form-label">Email</div>
+                                <div style="color: var(--text-main); margin-bottom: 12px;">alex.morgan@nebulax.com</div>
+
+                                <div class="form-label">Phone</div>
+                                <div style="color: var(--text-main); margin-bottom: 12px;">+1 (555) 123-4567</div>
+
+                                <div class="form-label">Skills</div>
+                                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                                    <span class="badge badge-info">Figma</span>
+                                    <span class="badge badge-info">HTML/CSS</span>
+                                    <span class="badge badge-info">React</span>
+                                    <span class="badge badge-info">UI/UX</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Activity -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Activity Timeline</div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 4px;">Uploaded new project files</div>
+                                <div style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 8px;">2 hours
+                                    ago</div>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">Added 3 new templates to the
+                                    Design System project.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 4px;">Commented on "Marketing Campaign"
+                                </div>
+                                <div style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 8px;">Yesterday
+                                </div>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">"Great work on the landing
+                                    page! Just a few tweaks needed on mobile."</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 4px;">Completed task #452</div>
+                                <div style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 8px;">2 days ago
+                                </div>
+                                <span class="badge badge-success">Task Completed</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

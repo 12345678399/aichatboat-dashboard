@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="default">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NebulaX - Premium Admin Dashboard</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <!-- ApexCharts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-logo">N</div>
+                <div class="brand-name">NebulaX</div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-group-label">Dashboards</div>
+                <a href="#" class="nav-link active" data-page="analytics">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    <span>Analytics</span>
+                </a>
+                <a href="#" class="nav-link" data-page="crm">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    <span>CRM</span>
+                </a>
+                <a href="#" class="nav-link" data-page="finance">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    <span>Finance</span>
+                </a>
+                <a href="#" class="nav-link" data-page="marketing">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M23 6l-9.5 9.5-5-5L1 18"></path>
+                        <path d="M17 6h6v6"></path>
+                    </svg>
+                    <span>Marketing</span>
+                </a>
+                <a href="#" class="nav-link" data-page="projects">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 11 12 14 22 4"></polyline>
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                    </svg>
+                    <span>Projects</span>
+                </a>
+                <a href="#" class="nav-link" data-page="support">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                        </path>
+                    </svg>
+                    <span>Support</span>
+                </a>
+                <a href="#" class="nav-link" data-page="products">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                        <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                    </svg>
+                    <span>eCommerce</span>
+                </a>
+
+                <div class="nav-group-label">Apps</div>
+                <a href="#" class="nav-link" data-page="chat">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Chat</span>
+                </a>
+
+                <div class="nav-group-label">System</div>
+                <a href="#" class="nav-link" data-page="pricing">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    <span>Pricing</span>
+                </a>
+                <a href="#" class="nav-link" data-page="faq">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    <span>FAQ</span>
+                </a>
+                <a href="maintenance.html" class="nav-link" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                        </path>
+                    </svg>
+                    <span>Maintenance</span>
+                </a>
+                <a href="#" class="nav-link" data-page="profile">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>User Profile</span>
+                </a>
+            </nav>
+
+            <div class="user-profile-mini">
+                <img src="https://ui-avatars.com/api/?name=Admin+User&background=random" alt="Avatar" class="avatar">
+                <div>
+                    <div style="font-weight: 600; font-size: 0.875rem;">Admin User</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">View Profile</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="toggle-sidebar-btn" aria-label="Toggle Sidebar">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                    <div class="search-container">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" class="search-input" placeholder="Search...">
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <!-- Layout Toggle -->
+                    <button class="icon-btn" onclick="toggleLayout()" title="Switch Layout">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                            <line x1="9" y1="21" x2="9" y2="9"></line>
+                        </svg>
+                    </button>
+
+                    <div class="dropdown">
+                        <button class="icon-btn" onclick="cycleTheme()" title="Switch Theme">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <button class="icon-btn">
+                        <div class="notification-badge"></div>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                    </button>
+
+                    <img src="https://ui-avatars.com/api/?name=Admin+User&background=random" alt="Avatar" class="avatar"
+                        style="width: 40px; height: 40px; cursor: pointer;">
+                </div>
+            </header>
+
+            <!-- Horizontal Menu (Visible only when body has .horizontal-layout) -->
+            <nav class="horizontal-menu">
+                <a href="#" class="nav-link active" data-page="analytics">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    <span>Analytics</span>
+                </a>
+                <a href="#" class="nav-link" data-page="crm">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    <span>CRM</span>
+                </a>
+                <a href="#" class="nav-link" data-page="finance">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    <span>Finance</span>
+                </a>
+                <a href="#" class="nav-link" data-page="marketing">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M23 6l-9.5 9.5-5-5L1 18"></path>
+                        <path d="M17 6h6v6"></path>
+                    </svg>
+                    <span>Marketing</span>
+                </a>
+                <a href="#" class="nav-link" data-page="projects">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 11 12 14 22 4"></polyline>
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                    </svg>
+                    <span>Projects</span>
+                </a>
+                <a href="#" class="nav-link" data-page="support">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                        </path>
+                    </svg>
+                    <span>Support</span>
+                </a>
+                <a href="#" class="nav-link" data-page="products">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                        <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                    </svg>
+                    <span>eCommerce</span>
+                </a>
+                <a href="#" class="nav-link" data-page="chat">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Chat</span>
+                </a>
+                <a href="#" class="nav-link" data-page="profile">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>User Profile</span>
+                </a>
+            </nav>
+
+            <!-- Dashboard Content Wrapper -->
+            <div class="content-body">
+
+                <!-- SECTION: Analytics (Default Active) -->
+                <section id="analytics" class="page-section active">
+                    <div class="page-header">
+                        <div>
+                            <h1 class="page-title">Analytics Overview</h1>
+                            <nav class="breadcrumb">
+                                <span>Dashboards</span> / <span style="color: var(--text-main);">Analytics</span>
+                            </nav>
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <button class="btn btn-secondary">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                Last 30 Days
+                            </button>
+                            <button class="btn btn-primary">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                                Create Report
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="card stat-card">
+                            <div class="stat-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                </svg>
+                            </div>
+                            <div class="stat-label">Total Revenue</div>
+                            <div class="stat-value">$124,500</div>
+                            <div class="stat-trend trend-up">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                    <polyline points="17 6 23 6 23 12"></polyline>
+                                </svg>
+                                +12.5% vs last month
+                            </div>
+                        </div>
+                        <div class="card stat-card">
+                            <div class="stat-icon" style="background: rgba(124, 58, 237, 0.15); color: #7C3AED;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <div class="stat-label">Active Users</div>
+                            <div class="stat-value">8,245</div>
+                            <div class="stat-trend trend-up">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                    <polyline points="17 6 23 6 23 12"></polyline>
+                                </svg>
+                                +4.1% vs last month
+                            </div>
+                        </div>
+                        <div class="card stat-card">
+                            <div class="stat-icon" style="background: rgba(239, 68, 68, 0.15); color: #DC2626;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="stat-label">Bounce Rate</div>
+                            <div class="stat-value">42.3%</div>
+                            <div class="stat-trend trend-down">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
+                                    <polyline points="17 18 23 18 23 12"></polyline>
+                                </svg>
+                                -2.1% (Improved)
+                            </div>
+                        </div>
+                        <div class="card stat-card">
+                            <div class="stat-icon" style="background: rgba(5, 150, 105, 0.15); color: #059669;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="9" cy="21" r="1"></circle>
+                                    <circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </div>
+                            <div class="stat-label">New Orders</div>
+                            <div class="stat-value">1,452</div>
+                            <div class="stat-trend trend-up">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                    <polyline points="17 6 23 6 23 12"></polyline>
+                                </svg>
+                                +8.4% vs last month
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Section -->
+                    <div
+                        style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-6); margin-bottom: var(--space-8);">
+                        <div class="card card-glass">
+                            <div class="card-header">
+                                <div class="card-title">Revenue Overview</div>
+                                <span class="badge badge-success">+18% Growth</span>
+                            </div>
+                            <div class="chart-container" id="revenueChart"></div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Traffic Source</div>
+                            </div>
+                            <div class="chart-container" id="trafficChart"></div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Table -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Recent Transactions</div>
+                            <button class="btn btn-secondary" style="font-size: 0.8rem;">View All</button>
+                        </div>
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Customer</th>
+                                        <th>Date</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="user-cell">
+                                                <img src="https://ui-avatars.com/api/?name=Sarah+Smith&background=random"
+                                                    class="avatar" alt="">
+                                                <div>
+                                                    <div style="font-weight: 600;">Sarah Smith</div>
+                                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                                        sarah@example.com</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Oct 24, 2026</td>
+                                        <td style="font-weight: 600;">$145.00</td>
+                                        <td><span class="badge badge-success">Completed</span></td>
+                                        <td>
+                                            <button class="btn btn-icon" style="width: 28px; height: 28px;">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <circle cx="12" cy="12" r="1"></circle>
+                                                    <circle cx="19" cy="12" r="1"></circle>
+                                                    <circle cx="5" cy="12" r="1"></circle>
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="user-cell">
+                                                <img src="https://ui-avatars.com/api/?name=James+Doe&background=random"
+                                                    class="avatar" alt="">
+                                                <div>
+                                                    <div style="font-weight: 600;">James Doe</div>
+                                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                                        james@example.com</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Oct 23, 2026</td>
+                                        <td style="font-weight: 600;">$89.00</td>
+                                        <td><span class="badge badge-warning">Pending</span></td>
+                                        <td>
+                                            <button class="btn btn-icon" style="width: 28px; height: 28px;">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <circle cx="12" cy="12" r="1"></circle>
+                                                    <circle cx="19" cy="12" r="1"></circle>
+                                                    <circle cx="5" cy="12" r="1"></circle>
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="user-cell">
+                                                <img src="https://ui-avatars.com/api/?name=Emily+R&background=random"
+                                                    class="avatar" alt="">
+                                                <div>
+                                                    <div style="font-weight: 600;">Emily R.</div>
+                                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                                        emily@example.com</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Oct 23, 2026</td>
+                                        <td style="font-weight: 600;">$620.50</td>
+                                        <td><span class="badge badge-success">Completed</span></td>
+                                        <td>
+                                            <button class="btn btn-icon" style="width: 28px; height: 28px;">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <circle cx="12" cy="12" r="1"></circle>
+                                                    <circle cx="19" cy="12" r="1"></circle>
+                                                    <circle cx="5" cy="12" r="1"></circle>
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: eCommerce Products -->
+                <section id="products" class="page-section">
+                    <div class="page-header">
+                        <div>
+                            <h1 class="page-title">Products</h1>
+                            <nav class="breadcrumb">
+                                <span>eCommerce</span> / <span style="color: var(--text-main);">Product List</span>
+                            </nav>
+                        </div>
+                        <button class="btn btn-primary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            Add Product
+                        </button>
+                    </div>
+
+                    <!-- Filters -->
+                    <div class="card" style="margin-bottom: var(--space-6);">
+                        <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+                            <input type="text" class="form-input" placeholder="Search products..."
+                                style="width: 300px;">
+                            <select class="form-input" style="width: 150px;">
+                                <option>Category</option>
+                                <option>Electronics</option>
+                                <option>Clothing</option>
+                            </select>
+                            <select class="form-input" style="width: 150px;">
+                                <option>Status</option>
+                                <option>Active</option>
+                                <option>Draft</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Products Table -->
+                    <div class="card">
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 40px;"><input type="checkbox"></th>
+                                        <th>Product</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Stock</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>
+                                            <div class="user-cell">
+                                                <div
+                                                    style="width: 40px; height: 40px; border-radius: 8px; background: #e2e8f0; display: grid; place-items: center;">
+                                                    IMG</div>
+                                                <div>
+                                                    <div style="font-weight: 600;">Nebula Wireless Headphones</div>
+                                                    <div style="font-size: 0.75rem; color: var(--text-muted);">ID:
+                                                        #SKU-892</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Electronics</td>
+                                        <td style="font-weight: 600;">$299.00</td>
+                                        <td>45</td>
+                                        <td><span class="badge badge-success">Active</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 8px;">
+                                                <button class="btn btn-icon" style="width: 28px; height: 28px;"><svg
+                                                        width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <path
+                                                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7">
+                                                        </path>
+                                                    </svg></button>
+                                                <button class="btn btn-icon"
+                                                    style="width: 28px; height: 28px; color: var(--danger);"><svg
+                                                        width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <polyline points="3 6 5 6 21 6"></polyline>
+                                                    </svg></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>
+                                            <div class="user-cell">
+                                                <div
+                                                    style="width: 40px; height: 40px; border-radius: 8px; background: #e2e8f0; display: grid; place-items: center;">
+                                                    IMG</div>
+                                                <div>
+                                                    <div style="font-weight: 600;">Ergo Gaming Chair</div>
+                                                    <div style="font-size: 0.75rem; color: var(--text-muted);">ID:
+                                                        #SKU-221</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Furniture</td>
+                                        <td style="font-weight: 600;">$149.00</td>
+                                        <td>0</td>
+                                        <td><span class="badge badge-danger">Out of Stock</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 8px;">
+                                                <button class="btn btn-icon" style="width: 28px; height: 28px;"><svg
+                                                        width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <path
+                                                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7">
+                                                        </path>
+                                                    </svg></button>
+                                                <button class="btn btn-icon"
+                                                    style="width: 28px; height: 28px; color: var(--danger);"><svg
+                                                        width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <polyline points="3 6 5 6 21 6"></polyline>
+                                                    </svg></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: Chat App -->
+                <section id="chat" class="page-section">
+                    <div class="page-header">
+                        <div>
+                            <h1 class="page-title">Messages</h1>
+                            <nav class="breadcrumb">
+                                <span>Apps</span> / <span style="color: var(--text-main);">Chat</span>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="chat-container">
+                        <!-- Sidebar -->
+                        <div class="chat-sidebar">
+                            <div class="chat-search">
+                                <input type="text" class="form-input" placeholder="Search contacts...">
+                            </div>
+                            <div class="contact-list">
+                                <div class="contact-item active">
+                                    <img src="https://ui-avatars.com/api/?name=Jane+Cooper&background=random"
+                                        class="avatar" alt="">
+                                    <div class="contact-info">
+                                        <div class="contact-name">Jane Cooper</div>
+                                        <div class="contact-last-msg">Sent you a file: project.pdf</div>
+                                    </div>
+                                    <span class="badge badge-primary" style="padding: 2px 6px;">2</span>
+                                </div>
+                                <div class="contact-item">
+                                    <img src="https://ui-avatars.com/api/?name=Wade+Warren&background=random"
+                                        class="avatar" alt="">
+                                    <div class="contact-info">
+                                        <div class="contact-name">Wade Warren</div>
+                                        <div class="contact-last-msg">Can we reschedule the meeting?</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main Chat -->
+                        <div class="chat-main">
+                            <div class="chat-header">
+                                <div class="user-cell">
+                                    <img src="https://ui-avatars.com/api/?name=Jane+Cooper&background=random"
+                                        class="avatar" alt="">
+                                    <div>
+                                        <div style="font-weight: 600;">Jane Cooper</div>
+                                        <div style="font-size: 0.75rem; color: var(--success);">Online</div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="1"></circle>
+                                        <circle cx="19" cy="12" r="1"></circle>
+                                        <circle cx="5" cy="12" r="1"></circle>
+                                    </svg></button>
+                            </div>
+
+                            <div class="chat-messages">
+                                <div class="message received">
+                                    <div class="bubble">Hi! Did you get a chance to look at the new designs?</div>
+                                    <span class="msg-time">10:30 AM</span>
+                                </div>
+                                <div class="message sent">
+                                    <div class="bubble">Yes, they look fantastic! I especially love the new color
+                                        palette.</div>
+                                    <span class="msg-time">10:32 AM</span>
+                                </div>
+                                <div class="message sent">
+                                    <div class="bubble">I just have a few small comments on the dashboard layout.</div>
+                                    <span class="msg-time">10:32 AM</span>
+                                </div>
+                            </div>
+
+                            <div class="chat-input-area">
+                                <button class="btn btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path
+                                            d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48">
+                                        </path>
+                                    </svg></button>
+                                <input type="text" class="form-input" placeholder="Type your message...">
+                                <button class="btn btn-primary" style="padding: 0 16px;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: User Profile -->
+                <section id="profile" class="page-section">
+                    <div class="page-header">
+                        <div>
+                            <h1 class="page-title">Profile</h1>
+                            <nav class="breadcrumb">
+                                <span>System</span> / <span style="color: var(--text-main);">User Profile</span>
+                            </nav>
+                        </div>
+                        <button class="btn btn-primary">Edit Profile</button>
+                    </div>
+
+                    <div class="profile-header">
+                        <div class="cover-image"></div>
+                        <img src="https://ui-avatars.com/api/?name=Alex+Morgan&background=random"
+                            class="profile-avatar-large" alt="Profile">
+                    </div>
+
+                    <div style="margin-left: 170px; margin-bottom: 40px;">
+                        <h1 style="font-size: 1.5rem; margin-bottom: 4px;">Alex Morgan</h1>
+                        <div style="color: var(--text-secondary); display: flex; gap: 16px; font-size: 0.875rem;">
+                            <span>Product Designer</span>
+                            <span>San Francisco, CA</span>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: var(--space-6);">
+                        <!-- Left Column: Info -->
+                        <div style="display: flex; flex-direction: column; gap: var(--space-6);">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-title">About</div>
+                                </div>
+                                <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.9rem;">
+                                    Senior Product Designer with 5+ years of experience in building SaaS applications.
+                                    Passionate about user experience and accessible design.
+                                </p>
+                                <div style="margin-top: 20px;">
+                                    <div class="form-label">Email</div>
+                                    <div style="color: var(--text-main); margin-bottom: 12px;">alex.morgan@nebulax.com
+                                    </div>
+
+                                    <div class="form-label">Phone</div>
+                                    <div style="color: var(--text-main); margin-bottom: 12px;">+1 (555) 123-4567</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Activity -->
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Activity Timeline</div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Uploaded new project files</div>
+                                    <div style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 8px;">2
+                                        hours ago</div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Commented on "Marketing Campaign"
+                                    </div>
+                                    <div style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 8px;">
+                                        Yesterday</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: CRM Dashboard -->
+                <section id="crm" class="page-section">
+                    <div class="page-header">
+                        <div>
+                            <h1 class="page-title">CRM Overview</h1>
+                            <nav class="breadcrumb">
+                                <span>Dashboards</span> / <span style="color: var(--text-main);">CRM</span>
+                            </nav>
+                        </div>
+                        <button class="btn btn-primary" data-modal-target="#add-lead-modal">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            Add Lead
+                        </button>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="stats-grid">
+                        <div class="card stat-card">
+                            <div class="stat-icon" style="background: rgba(37, 99, 235, 0.15); color: var(--primary);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <div class="stat-label">Total Leads</div>
+                            <div class="stat-value">2,543</div>
+                            <div class="stat-trend trend-up">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                    <polyline points="17 6 23 6 23 12"></polyline>
+                                </svg> +12%
+                            </div>
+                        </div>
+                        <div class="card stat-card">
+                            <div class="stat-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--success);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                            </div>
+                            <div class="stat-label">Deals Won</div>
+                            <div class="stat-value">$145k</div>
+                            <div class="stat-trend trend-up">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                    <polyline points="17 6 23 6 23 12"></polyline>
+                                </svg> +8.5%
+                            </div>
+                        </div>
+                        <div class="card stat-card">
+                            <div class="stat-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--warning);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <div class="stat-label">Pipeline Value</div>
+                            <div class="stat-value">$1.2M</div>
+                        </div>
+                    </div>
+
+                    <!-- Pipeline Board -->
+                    <div
+                        style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-bottom: var(--space-8);">
+                        <!-- Column 1 -->
+                        <div
+                            style="background: var(--bg-surface-alt); padding: var(--space-4); border-radius: var(--radius-lg);">
+                            <div
+                                style="display: flex; justify-content: space-between; margin-bottom: var(--space-4); font-weight: 600;">
+                                <span>New Leads</span>
+                                <span class="badge badge-info">3</span>
+                            </div>
+                            <div class="card"
+                                style="margin-bottom: var(--space-3); padding: var(--space-4); cursor: grab;">
+                                <div style="font-weight: 600; margin-bottom: 4px;">Acme Corp Deal</div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted);">$15,000 • In Progress</div>
+                            </div>
+                            <div class="card"
+                                style="margin-bottom: var(--space-3); padding: var(--space-4); cursor: grab;">
+                                <div style="font-weight: 600; margin-bottom: 4px;">Global Tech License</div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted);">$8,500 • Qualification</div>
+                            </div>
+                        </div>
+
+                        <!-- Column 2 -->
+                        <div
+                            style="background: var(--bg-surface-alt); padding: var(--space-4); border-radius: var(--radius-lg);">
+                            <div
+                                style="display: flex; justify-content: space-between; margin-bottom: var(--space-4); font-weight: 600;">
+                                <span>Negotiation</span>
+                                <span class="badge badge-warning">2</span>
+                            </div>
+                            <div class="card"
+                                style="margin-bottom: var(--space-3); padding: var(--space-4); cursor: grab;">
+                                <div style="font-weight: 600; margin-bottom: 4px;">Enterprise Bundle</div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted);">$45,000 • Proposal Sent</div>
+                            </div>
+                        </div>
+
+                        <!-- Column 3 -->
+                        <div
+                            style="background: var(--bg-surface-alt); padding: var(--space-4); border-radius: var(--radius-lg);">
+                            <div
+                                style="display: flex; justify-content: space-between; margin-bottom: var(--space-4); font-weight: 600;">
+                                <span>Closed Won</span>
+                                <span class="badge badge-success">4</span>
+                            </div>
+                            <div class="card"
+                                style="margin-bottom: var(--space-3); padding: var(--space-4); opacity: 0.8;">
+                                <div style="font-weight: 600; margin-bottom: 4px;">Startup Plan</div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted);">$2,000 • Signed</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: Finance Dashboard -->
+                <section id="finance" class="page-section">
+                    <div class="page-header">
+                        <div>
+                            <h1 class="page-title">Financial Overview</h1>
+                            <nav class="breadcrumb">
+                                <span>Dashboards</span> / <span style="color: var(--text-main);">Finance</span>
+                            </nav>
+                        </div>
+                        <button class="btn btn-primary" onclick="showToast('Invoice Generated!', 'success')">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            New Invoice
+                        </button>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="card stat-card">
+                            <div class="stat-label">Total Income</div>
+                            <div class="stat-value">$248,320</div>
+                            <div class="stat-trend trend-up">+14% vs last month</div>
+                        </div>
+                        <div class="card stat-card">
+                            <div class="stat-label">Total Expenses</div>
+                            <div class="stat-value">$86,400</div>
+                            <div class="stat-trend trend-down">-2.3% vs last month</div>
+                        </div>
+                        <div class="card stat-card">
+                            <div class="stat-label">Net Profit</div>
+                            <div class="stat-value">$161,920</div>
+                            <div class="stat-trend trend-up">+21% vs last month</div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Recent Invoices</div>
+                        </div>
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Invoice ID</th>
+                                        <th>Client</th>
+                                        <th>Date</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#INV-001</td>
+                                        <td>Acme Corp</td>
+                                        <td>Oct 24, 2026</td>
+                                        <td style="font-weight: 600;">$1,200.00</td>
+                                        <td><span class="badge badge-success">Paid</span></td>
+                                        <td><button class="btn btn-icon"><svg width="16" height="16" viewBox="0 0 24 24"
+                                                    fill="none" stroke="currentColor" stroke-width="2">
+                                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                                </svg></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#INV-002</td>
+                                        <td>Globex Inc</td>
+                                        <td>Oct 22, 2026</td>
+                                        <td style="font-weight: 600;">$3,450.00</td>
+                                        <td><span class="badge badge-warning">Pending</span></td>
+                                        <td><button class="btn btn-icon"><svg width="16" height="16" viewBox="0 0 24 24"
+                                                    fill="none" stroke="currentColor" stroke-width="2">
+                                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                                </svg></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#INV-003</td>
+                                        <td>Soylent Corp</td>
+                                        <td>Oct 15, 2026</td>
+                                        <td style="font-weight: 600;">$150.00</td>
+                                        <td><span class="badge badge-danger">Overdue</span></td>
+                                        <td><button class="btn btn-icon"><svg width="16" height="16" viewBox="0 0 24 24"
+                                                    fill="none" stroke="currentColor" stroke-width="2">
+                                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                                </svg></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- SECTION: Marketing Dashboard -->
+                    <section id="marketing" class="page-section">
+                        <div class="page-header">
+                            <div>
+                                <h1 class="page-title">Marketing Metrics</h1>
+                                <nav class="breadcrumb">
+                                    <span>Dashboards</span> / <span style="color: var(--text-main);">Marketing</span>
+                                </nav>
+                            </div>
+                            <div class="tabs-container">
+                                <div class="tabs">
+                                    <button class="tab-btn active">Overview</button>
+                                    <button class="tab-btn">Campaigns</button>
+                                    <button class="tab-btn">Social</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stats-grid">
+                            <div class="card stat-card">
+                                <div class="stat-label">Total Reach</div>
+                                <div class="stat-value">1.2M</div>
+                                <div class="stat-trend trend-up">+5.4%</div>
+                            </div>
+                            <div class="card stat-card">
+                                <div class="stat-label">Engagement Rate</div>
+                                <div class="stat-value">4.8%</div>
+                                <div class="stat-trend trend-down">-0.2%</div>
+                            </div>
+                            <div class="card stat-card">
+                                <div class="stat-label">Ad Spend</div>
+                                <div class="stat-value">$12,500</div>
+                                <div class="stat-trend trend-up">+12%</div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Active Campaigns</div>
+                            </div>
+                            <div class="table-container">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Campaign</th>
+                                            <th>Platform</th>
+                                            <th>Status</th>
+                                            <th>Reach</th>
+                                            <th>Progress</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="font-weight: 600;">Summer Sale 2026</td>
+                                            <td>Instagram</td>
+                                            <td><span class="badge badge-success">Active</span></td>
+                                            <td>450k</td>
+                                            <td style="width: 150px;">
+                                                <div class="progress-wrapper">
+                                                    <div class="progress-label"><span>Budget Used</span><span>75%</span>
+                                                    </div>
+                                                    <div class="progress-bar-bg">
+                                                        <div class="progress-bar-fill" style="width: 75%;"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 600;">Back to School</td>
+                                            <td>Facebook</td>
+                                            <td><span class="badge badge-warning">Paused</span></td>
+                                            <td>120k</td>
+                                            <td style="width: 150px;">
+                                                <div class="progress-wrapper">
+                                                    <div class="progress-label"><span>Budget Used</span><span>45%</span>
+                                                    </div>
+                                                    <div class="progress-bar-bg">
+                                                        <div class="progress-bar-fill"
+                                                            style="width: 45%; background: var(--warning);"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SECTION: Project Management -->
+                    <section id="projects" class="page-section">
+                        <div class="page-header">
+                            <div>
+                                <h1 class="page-title">Project Board</h1>
+                                <nav class="breadcrumb">
+                                    <span>Dashboards</span> / <span style="color: var(--text-main);">Projects</span>
+                                </nav>
+                            </div>
+                            <button class="btn btn-primary">New Task</button>
+                        </div>
+
+                        <!-- Tabs Component -->
+                        <div class="tabs-container">
+                            <div class="tabs">
+                                <button class="tab-btn active" data-tab-target="#tab-todo">To Do</button>
+                                <button class="tab-btn" data-tab-target="#tab-progress">In Progress</button>
+                                <button class="tab-btn" data-tab-target="#tab-done">Done</button>
+                            </div>
+
+                            <div id="tab-todo" class="tab-content active">
+                                <div style="display: grid; gap: var(--space-4);">
+                                    <div class="card">
+                                        <div style="display: flex; justify-content: space-between;">
+                                            <h3 style="font-weight: 600;">Redesign Login Page</h3>
+                                            <span class="badge badge-danger">High</span>
+                                        </div>
+                                        <p style="color: var(--text-secondary); margin: 8px 0; font-size: 0.9rem;">
+                                            Update the login flow to support 2FA and social auth.</p>
+                                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                                            <img src="https://ui-avatars.com/api/?name=John+D&background=random"
+                                                class="avatar" style="width: 24px; height: 24px;">
+                                            <span style="font-size: 0.8rem; color: var(--text-muted);">Due
+                                                Tomorrow</span>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div style="display: flex; justify-content: space-between;">
+                                            <h3 style="font-weight: 600;">Database Migration</h3>
+                                            <span class="badge badge-warning">Medium</span>
+                                        </div>
+                                        <p style="color: var(--text-secondary); margin: 8px 0; font-size: 0.9rem;">Move
+                                            legacy data to the new schema.</p>
+                                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                                            <img src="https://ui-avatars.com/api/?name=Sarah+K&background=random"
+                                                class="avatar" style="width: 24px; height: 24px;">
+                                            <span style="font-size: 0.8rem; color: var(--text-muted);">Due Next
+                                                Week</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="tab-progress" class="tab-content">
+                                <div class="card">
+                                    <h3 style="font-weight: 600; margin-bottom: 8px;">API Integration</h3>
+                                    <div class="progress-wrapper">
+                                        <div class="progress-label"><span>Development</span><span>60%</span></div>
+                                        <div class="progress-bar-bg">
+                                            <div class="progress-bar-fill" style="width: 60%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="tab-done" class="tab-content">
+                                <div class="card" style="opacity: 0.7;">
+                                    <h3 style="font-weight: 600; text-decoration: line-through;">Client Meeting</h3>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Gather requirements for Q4.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SECTION: Support Tickets -->
+                    <section id="support" class="page-section">
+                        <div class="page-header">
+                            <div>
+                                <h1 class="page-title">Support Tickets</h1>
+                                <nav class="breadcrumb">
+                                    <span>Dashboards</span> / <span style="color: var(--text-main);">Support</span>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <div class="stats-grid">
+                            <div class="card stat-card">
+                                <div class="stat-label">Open Tickets</div>
+                                <div class="stat-value">24</div>
+                                <div class="stat-trend trend-down">Low Volume</div>
+                            </div>
+                            <div class="card stat-card">
+                                <div class="stat-label">Avg Response</div>
+                                <div class="stat-value">2h 15m</div>
+                                <div class="stat-trend trend-up">Improved by 10%</div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="table-container">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Subject</th>
+                                            <th>Customer</th>
+                                            <th>Priority</th>
+                                            <th>Status</th>
+                                            <th>Last Update</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>#8821</td>
+                                            <td style="font-weight: 600;">Cannot reset password</td>
+                                            <td>Alice Freeman</td>
+                                            <td><span class="badge badge-danger">High</span></td>
+                                            <td><span class="badge badge-info">Open</span></td>
+                                            <td>10 mins ago</td>
+                                            <td><button class="btn btn-secondary"
+                                                    style="font-size: 0.8rem;">Reply</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#8820</td>
+                                            <td style="font-weight: 600;">Billing question</td>
+                                            <td>Mark Taylor</td>
+                                            <td><span class="badge badge-warning">Medium</span></td>
+                                            <td><span class="badge badge-success">Resolved</span></td>
+                                            <td>2 hours ago</td>
+                                            <td><button class="btn btn-secondary"
+                                                    style="font-size: 0.8rem;">View</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SECTION: Pricing Plans -->
+                    <section id="pricing" class="page-section">
+                        <div class="page-header">
+                            <div style="text-align: center; width: 100%;">
+                                <h1 class="page-title" style="margin-bottom: 8px;">Simple, Transparent Pricing</h1>
+                                <p style="color: var(--text-secondary);">Choose the plan that fits your needs.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6); max-width: 1000px; margin: 0 auto;">
+                            <!-- Basic Plan -->
+                            <div class="card" style="border-top: 4px solid var(--text-muted);">
+                                <div class="card-header" style="text-align: center; padding-bottom: 0;">
+                                    <h3 style="font-weight: 600; color: var(--text-secondary);">Startup</h3>
+                                    <div
+                                        style="font-size: 2.5rem; font-weight: 700; color: var(--text-main); margin: 16px 0;">
+                                        $29<span
+                                            style="font-size: 1rem; color: var(--text-muted); font-weight: 400;">/mo</span>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <ul
+                                        style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+                                        <li style="display: flex; gap: 8px;"><svg class="text-success" width="20"
+                                                height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2">
+                                                <polyline points="20 6 9 17 4 12"></polyline>
+                                            </svg> 5 Projects</li>
+                                        <li style="display: flex; gap: 8px;"><svg class="text-success" width="20"
+                                                height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2">
+                                                <polyline points="20 6 9 17 4 12"></polyline>
+                                            </svg> Basic Analytics</li>
+                                        <li style="display: flex; gap: 8px;"><svg class="text-success" width="20"
+                                                height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2">
+                                                <polyline points="20 6 9 17 4 12"></polyline>
+                                            </svg> 24/7 Support</li>
+                                    </ul>
+                                    <button class="btn btn-outline" style="width: 100%; margin-top: 24px;">Start Free
+                                        Trial</button>
+                                </div>
+                            </div>
+
+                            <!-- Pro Plan -->
+                            <div class="card"
+                                style="border: 2px solid var(--primary); position: relative; transform: scale(1.05); z-index: 1;">
+                                <div
+                                    style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">
+                                    MOST POPULAR</div>
+                                <div class="card-header" style="text-align: center; padding-bottom: 0;">
+                                    <h3 style="font-weight: 600; color: var(--primary);">Business</h3>
+                                    <div
+                                        style="font-size: 2.5rem; font-weight: 700; color: var(--text-main); margin: 16px 0;">
+                                        $99<span
+                                            style="font-size: 1rem; color: var(--text-muted); font-weight: 400;">/mo</span>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <ul
+                                        style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+                                        <li style="display: flex; gap: 8px;"><svg class="text-success" width="20"
+                                                height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2">
+                                                <polyline points="20 6 9 17 4 12"></polyline>
+                                            </svg> Unlimited Projects</li>
+                                        <li style="display: flex; gap: 8px;"><svg class="text-success" width="20"
+                                                height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2">
+                                                <polyline points="20 6 9 17 4 12"></polyline>
+                                            </svg> Advanced Analytics</li>
+                                        <li style="display: flex; gap: 8px;"><svg class="text-success" width="20"
+                                                height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2">
+                                                <polyline points="20 6 9 17 4 12"></polyline>
+                                            </svg> Priority Support</li>
+                                        <li style="display: flex; gap: 8px;"><svg class="text-success" width="20"
+                                                height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2">
+                                                <polyline points="20 6 9 17 4 12"></polyline>
+                                            </svg> API Access</li>
+                                    </ul>
+                                    <button class="btn btn-primary" style="width: 100%; margin-top: 24px;">Get
+                                        Started</button>
+                                </div>
+                            </div>
+
+                            <!-- Enterprise Plan -->
+                            <div class="card" style="border-top: 4px solid var(--text-main);">
+                                <div class="card-header" style="text-align: center; padding-bottom: 0;">
+                                    <h3 style="font-weight: 600; color: var(--text-secondary);">Enterprise</h3>
+                                    <div
+                                        style="font-size: 2.5rem; font-weight: 700; color: var(--text-main); margin: 16px 0;">
+                                        Custom</div>
+                                </div>
+                                <div class="card-body">
+                                    <ul
+                                        style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+                                        <li style="display: flex; gap: 8px;"><svg class="text-success" width="20"
+                                                height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2">
+                                                <polyline points="20 6 9 17 4 12"></polyline>
+                                            </svg> Everything in Pro</li>
+                                        <li style="display: flex; gap: 8px;"><svg class="text-success" width="20"
+                                                height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2">
+                                                <polyline points="20 6 9 17 4 12"></polyline>
+                                            </svg> Dedicated Account Manager</li>
+                                        <li style="display: flex; gap: 8px;"><svg class="text-success" width="20"
+                                                height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2">
+                                                <polyline points="20 6 9 17 4 12"></polyline>
+                                            </svg> SSO & Security</li>
+                                    </ul>
+                                    <button class="btn btn-outline" style="width: 100%; margin-top: 24px;">Contact
+                                        Sales</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SECTION: FAQ -->
+                    <section id="faq" class="page-section">
+                        <div class="page-header">
+                            <div>
+                                <h1 class="page-title">Frequently Asked Questions</h1>
+                                <nav class="breadcrumb">
+                                    <span>Pages</span> / <span style="color: var(--text-main);">FAQ</span>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <div style="max-width: 800px; margin: 0 auto;">
+                            <div class="accordion">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        How do I switch themes?
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </button>
+                                    <div class="accordion-body">
+                                        You can switch themes by clicking the droplet icon in the top header. We offer
+                                        several presets including Default, Teal, Indigo, and Dark Mode.
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        Can I export my data?
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </button>
+                                    <div class="accordion-body">
+                                        Yes, currently you can export your data to CSV or PDF from the Settings page.
+                                        API access is available on the Business plan for automated backups.
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        Is this template responsive?
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </button>
+                                    <div class="accordion-body">
+                                        Absolutely! NebulaX is built with a mobile-first approach. It works seamlessly
+                                        on desktops, tablets, and mobile devices with a touch-friendly interface.
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        What browsers are supported?
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </button>
+                                    <div class="accordion-body">
+                                        We support the latest versions of Chrome, Firefox, Safari, and Edge.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SECTION: Invoice View -->
+                    <section id="invoice-view" class="page-section">
+                        <div class="page-header">
+                            <div>
+                                <h1 class="page-title">Invoice #INV-001</h1>
+                                <nav class="breadcrumb">
+                                    <span>Finance</span> / <span style="color: var(--text-main);">Invoice</span>
+                                </nav>
+                            </div>
+                            <button class="btn btn-secondary" onclick="window.print()">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                                    <path
+                                        d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2">
+                                    </path>
+                                    <rect x="6" y="14" width="12" height="8"></rect>
+                                </svg>
+                                Print
+                            </button>
+                        </div>
+
+                        <div class="card" style="max-width: 800px; margin: 0 auto; padding: var(--space-8);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-8);">
+                                <div>
+                                    <div style="font-weight: 700; font-size: 1.5rem; color: var(--primary);">NebulaX
+                                    </div>
+                                    <div style="color: var(--text-secondary); margin-top: 8px;">
+                                        123 Tech Valley<br>
+                                        San Francisco, CA 94105<br>
+                                        billing@nebulax.com
+                                    </div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <div style="font-weight: 600; font-size: 1.25rem;">INVOICE</div>
+                                    <div style="color: var(--text-secondary); margin-top: 8px;">
+                                        Date: Oct 24, 2026<br>
+                                        Due: Nov 24, 2026
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-8);">
+                                <div>
+                                    <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">BILL TO
+                                    </div>
+                                    <div style="font-weight: 500;">Acme Corp</div>
+                                    <div style="color: var(--text-secondary);">
+                                        456 Corporate Blvd<br>
+                                        New York, NY 10012
+                                    </div>
+                                </div>
+                            </div>
+
+                            <table class="table" style="margin-bottom: var(--space-8);">
+                                <thead style="background: var(--bg-surface-alt);">
+                                    <tr>
+                                        <th>Description</th>
+                                        <th style="text-align: right;">Hours</th>
+                                        <th style="text-align: right;">Rate</th>
+                                        <th style="text-align: right;">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>UI Design Consultation</td>
+                                        <td style="text-align: right;">10</td>
+                                        <td style="text-align: right;">$100.00</td>
+                                        <td style="text-align: right; font-weight: 600;">$1,000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prototype Development</td>
+                                        <td style="text-align: right;">2</td>
+                                        <td style="text-align: right;">$100.00</td>
+                                        <td style="text-align: right; font-weight: 600;">$200.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div style="display: flex; justify-content: flex-end;">
+                                <div style="width: 250px;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                        <span style="color: var(--text-secondary);">Subtotal</span>
+                                        <span style="font-weight: 600;">$1,200.00</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                        <span style="color: var(--text-secondary);">Tax (0%)</span>
+                                        <span>$0.00</span>
+                                    </div>
+                                    <div
+                                        style="display: flex; justify-content: space-between; margin-top: 16px; border-top: 2px solid var(--border-color); padding-top: 16px;">
+                                        <span style="font-weight: 700; font-size: 1.1rem;">Total</span>
+                                        <span
+                                            style="font-weight: 700; font-size: 1.1rem; color: var(--primary);">$1,200.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main JS -->
+                        <script src="js/main.js"></script>
+
+                        <!-- Chart Configuration -->
+                        <script>
+                            // Simple Theme Cycler for Demo
+                            const themes = ['default', 'purple', 'green', 'dark', 'orange', 'contrast'];
+                            let currentThemeIndex = 0;
+
+                            function cycleTheme() {
+                                currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+                                const newTheme = themes[currentThemeIndex];
+                                window.setTheme(newTheme);
+                            }
+
+                            // ApexCharts Initialization
+                            document.addEventListener('DOMContentLoaded', function () {
+
+                                // Revenue Chart
+                                const revenueOptions = {
+                                    series: [{
+                                        name: 'Revenue',
+                                        data: [31, 40, 28, 51, 42, 109, 100]
+                                    }, {
+                                        name: 'Expenses',
+                                        data: [11, 32, 45, 32, 34, 52, 41]
+                                    }],
+                                    chart: {
+                                        height: 300,
+                                        type: 'area',
+                                        toolbar: { show: false },
+                                        fontFamily: 'Inter, sans-serif'
+                                    },
+                                    dataLabels: { enabled: false },
+                                    stroke: { curve: 'smooth', width: 2 },
+                                    xaxis: {
+                                        categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+                                        borderColor: 'var(--border-color)',
+                                        labels: { style: { colors: 'var(--text-secondary)' } }
+                                    },
+                                    yaxis: {
+                                        labels: { style: { colors: 'var(--text-secondary)' } }
+                                    },
+                                    colors: ['#2563EB', '#64748B'], // Should ideally map to CSS vars
+                                    fill: {
+                                        type: 'gradient',
+                                        gradient: {
+                                            shadeIntensity: 1,
+                                            opacityFrom: 0.4,
+                                            opacityTo: 0.05,
+                                            stops: [0, 90, 100]
+                                        }
+                                    },
+                                    grid: {
+                                        borderColor: 'var(--border-color)',
+                                        strokeDashArray: 4,
+                                    },
+                                    tooltip: { theme: 'dark' }
+                                };
+
+                                const revenueChart = new ApexCharts(document.querySelector("#revenueChart"), revenueOptions);
+                                revenueChart.render();
+
+                                // Traffic Chart
+                                const trafficOptions = {
+                                    series: [44, 55, 13, 33],
+                                    chart: {
+                                        width: '100%',
+                                        height: 300,
+                                        type: 'donut',
+                                        fontFamily: 'Inter, sans-serif'
+                                    },
+                                    labels: ['Direct', 'Social', 'Referral', 'Organic'],
+                                    plotOptions: {
+                                        pie: {
+                                            donut: {
+                                                size: '70%',
+                                                labels: {
+                                                    show: true,
+                                                    total: {
+                                                        show: true,
+                                                        label: 'Total',
+                                                        formatter: function (w) {
+                                                            return w.globals.seriesTotals.reduce((a, b) => {
+                                                                return a + b
+                                                            }, 0)
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    dataLabels: { enabled: false },
+                                    legend: { position: 'bottom', labels: { colors: 'var(--text-secondary)' } },
+                                    colors: ['#2563EB', '#059669', '#F59E0B', '#64748B'],
+                                    stroke: { show: false }
+                                };
+
+                                const trafficChart = new ApexCharts(document.querySelector("#trafficChart"), trafficOptions);
+                                trafficChart.render();
+                            });
+                        </script>
+</body>
+
+</html>

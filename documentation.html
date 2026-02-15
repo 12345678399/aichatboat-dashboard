@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - NebulaX Admin Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <style>
+        body {
+            font-family: var(--font-family-base);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Sidebar Styles */
+        .doc-sidebar {
+            width: 260px;
+            background-color: var(--bg-surface);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow-y: auto;
+            flex-shrink: 0;
+        }
+
+        .doc-header {
+            padding: var(--space-6);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .brand {
+            font-family: var(--font-family-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .doc-nav {
+            padding: var(--space-6);
+        }
+
+        .doc-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .doc-nav li {
+            margin-bottom: var(--space-2);
+        }
+
+        .doc-nav a {
+            display: block;
+            padding: var(--space-2) var(--space-4);
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .doc-nav a:hover,
+        .doc-nav a.active {
+            background-color: var(--bg-surface-alt);
+            color: var(--primary);
+        }
+
+        .doc-nav .section-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-top: var(--space-6);
+            margin-bottom: var(--space-3);
+            padding-left: var(--space-4);
+            font-weight: 600;
+        }
+
+        /* Content Styles */
+        .doc-content {
+            flex: 1;
+            padding: var(--space-8);
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .doc-section {
+            margin-bottom: 60px;
+            padding-top: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 60px;
+        }
+
+        .doc-section:last-child {
+            border-bottom: none;
+        }
+
+        h1 {
+            font-family: var(--font-family-heading);
+            font-size: 2.5rem;
+            margin-bottom: var(--space-4);
+            color: var(--text-main);
+        }
+
+        h2 {
+            font-family: var(--font-family-heading);
+            font-size: 1.75rem;
+            margin-top: 0;
+            margin-bottom: var(--space-4);
+            color: var(--text-main);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-top: var(--space-6);
+            margin-bottom: var(--space-3);
+            color: var(--text-main);
+        }
+
+        p {
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-4);
+        }
+
+        code {
+            background-color: var(--bg-surface-alt);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9em;
+            color: var(--primary);
+        }
+
+        pre {
+            background-color: #1a1b1e;
+            color: #e0e0e0;
+            padding: var(--space-4);
+            border-radius: var(--radius-md);
+            overflow-x: auto;
+            margin-bottom: var(--space-4);
+        }
+    </style>
+</head>
+
+<body>
+
+    <aside class="doc-sidebar">
+        <div class="doc-header">
+            <a href="index.html" class="brand">NebulaX Docs</a>
+        </div>
+        <nav class="doc-nav">
+            <ul>
+                <li><a href="#introduction" class="active">Introduction</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#file-structure">File Structure</a></li>
+            </ul>
+            <div class="section-title">Customization</div>
+            <ul>
+                <li><a href="#theming">Theming & Colors</a></li>
+                <li><a href="#layout">Layout Options</a></li>
+                <li><a href="#fonts">Typography</a></li>
+            </ul>
+            <div class="section-title">Other</div>
+            <ul>
+                <li><a href="#credits">Credits</a></li>
+                <li><a href="#support">Support</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="doc-content">
+        <div class="container">
+            <section id="introduction" class="doc-section">
+                <h1>Introduction</h1>
+                <p>Welcome to <strong>NebulaX</strong>, a premium, high-performance admin dashboard template built with
+                    vanilla HTML, CSS, and JavaScript. It is designed to be lightweight, fast, and easy to customize
+                    without the overhead of heavy frameworks.</p>
+                <h3>Key Features</h3>
+                <ul>
+                    <li><strong>No Framework Dependency:</strong> Pure Vanilla JS and CSS.</li>
+                    <li><strong>Modern Design:</strong> Glassmorphism, dark mode ready, and premium aesthetics.</li>
+                    <li><strong>Fully Responsive:</strong> Mobile-first approach.</li>
+                    <li><strong>SPA-like Experience:</strong> Fast navigation without page reloads.</li>
+                    <li><strong>Comprehensive Layouts:</strong> Vertical sidebar and Horizontal top navigation.</li>
+                    <li><strong>Themeable:</strong> Easy color customization via CSS variables.</li>
+                </ul>
+            </section>
+
+            <section id="installation" class="doc-section">
+                <h2>Installation</h2>
+                <p>Getting started with NebulaX is incredibly simple since it doesn't require a build process (unless
+                    you want to add one).</p>
+                <h3>Steps</h3>
+                <ol>
+                    <li>Unzip the downloaded package.</li>
+                    <li>Open the folder in your favorite code editor (VS Code recommended).</li>
+                    <li>Open <code>index.html</code> in your browser.</li>
+                </ol>
+                <p>That's it! You are ready to go.</p>
+                <p><strong>Note:</strong> For the best experience and to avoid CORS issues with some local file requests
+                    (if you add them manually), it is recommended to run the project on a local server (e.g., using Live
+                    Server extension in VS Code).</p>
+            </section>
+
+            <section id="file-structure" class="doc-section">
+                <h2>File Structure</h2>
+                <pre>
+NebulaX/
+├── css/
+│   ├── components.css   # Styles for UI components (cards, buttons, tables)
+│   ├── layout.css       # Layout styles (sidebar, header, grid)
+│   ├── reset.css        # CSS reset
+│   └── variables.css    # Global variables (colors, fonts, spacing)
+├── js/
+│   └── main.js          # Core JavaScript logic
+├── index.html           # Main dashboard file (SPA entry point)
+├── documentation.html   # This file
+└── maintenance.html     # Standalone maintenance page</pre>
+            </section>
+
+            <section id="theming" class="doc-section">
+                <h2>Theming & Colors</h2>
+                <p>NebulaX uses CSS Custom Properties (variables) for easy theming. You can find all color definitions
+                    in <code>css/variables.css</code>.</p>
+                <h3>Changing the Primary Color</h3>
+                <p>To change the primary brand color, simply edit the <code>--primary</code> variable:</p>
+                <pre>
+:root {
+    /* Change this value */
+    --primary: #2563EB; 
+    
+    /* Optional: Update shades */
+    --primary-hover: #1D4ED8;
+}</pre>
+                <h3>Dark Mode</h3>
+                <p>Dark mode is implemented using a <code>[data-theme="dark"]</code> attribute on the
+                    <code>&lt;html&gt;</code> element. The colors for dark mode are defined in the same
+                    <code>variables.css</code> file under the dark theme block.</p>
+            </section>
+
+            <section id="layout" class="doc-section">
+                <h2>Layout Options</h2>
+                <p>NebulaX supports two main layouts: <strong>Vertical Sidebar</strong> (default) and <strong>Horizontal
+                        Menu</strong>.</p>
+                <h3>Switching Layouts</h3>
+                <p>Users can switch layouts using the layout toggle button in the header. This preference is saved in
+                    <code>localStorage</code>.</p>
+                <p>To force a default layout, you can modify the <code>initLayoutSwitcher</code> function in
+                    <code>js/main.js</code>.</p>
+            </section>
+
+            <section id="credits" class="doc-section">
+                <h2>Credits</h2>
+                <p>We used the following open-source libraries and resources:</p>
+                <ul>
+                    <li><strong>ApexCharts</strong> - For interactive charts.</li>
+                    <li><strong>Feather Icons</strong> (SVG) - For the icon set.</li>
+                    <li><strong>Google Fonts</strong> - Inter and Manrope font families.</li>
+                    <li><strong>UI Avatars</strong> - For placeholder user avatars.</li>
+                </ul>
+            </section>
+
+            <section id="support" class="doc-section">
+                <h2>Support</h2>
+                <p>If you have any questions or need help with customization, please feel free to reach out to our
+                    support team.</p>
+                <p>Email: <a href="mailto:support@nebulax.com">support@nebulax.com</a></p>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Simple active link highlighting
+        const navLinks = document.querySelectorAll('.doc-nav a');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
